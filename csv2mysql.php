@@ -5,9 +5,6 @@ $user = 'username';
 $pass = 'password';
 $database = 'database';
 
-$db = mysql_connect($host, $user, $pass);
-mysql_query("use $database", $db);
-
 /********************************************************************************/
 // Parameters: filename.csv table_name insert_count
 
@@ -24,6 +21,11 @@ else {
     $maxInsertCount = 100;
 }
 
+/********************************************************************************/
+// Connect to DB
+
+$db = mysql_connect($host, $user, $pass);
+mysql_query("use $database", $db);
 
 /********************************************************************************/
 // Get the first row to create the column headings
